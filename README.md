@@ -1,1 +1,1 @@
-# liferay-course-personalized-experiences
+# Mastering Liferay Personalized Experiences
