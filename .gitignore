@@ -1,7 +1,10 @@
 **/*.iml
 **/.ivy
 **/.classpath
+**/.vscode
 **/.project
+**/elasticsearch7
+**/.DS_Store
 **/.sass-cache
 **/.settings
 **/bin
@@ -25,3 +28,7 @@
 /plugins-sdk/dist
 /plugins-sdk/lib
 test-results
+/.yarnrc
+/package.json
+/yarn.lock
+
