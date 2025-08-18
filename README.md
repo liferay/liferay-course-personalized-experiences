@@ -1,82 +1,58 @@
 # Mastering Liferay Personalized Experiences
 
-## Enablement Bootcamp Prerequisite
+This repository contains the Mastering Liferay Personalized Experiences course materials.
 
-Please review the course prerequisites [here](https://www.liferay.com/pt/web/events/enablement-bootcamp-prerequisites).
+## Table of Contents
 
-## Setting up environments
+- [Bundle Preparation](#bundle-preparation)
+- [Starting and Stopping the Bundle](#starting-and-stopping-the-bundle)
+ 
 
-Here are some simple instructions to prepare your environment before the training starts.
+## Bundle Preparation
 
-1. Clone the repository to your computer.
+To prepare your local Liferay bundle, you need to use the Blade CLI tool. The Blade CLI provides a convenient way to manage Liferay projects and bundles. Follow the steps below to set up your local environment:
 
-    ```
-    git clone https://github.com/liferay/liferay-course-personalized-experiences.git
-    ```
+1. **Ensure Blade CLI is Installed**: Make sure you have the Blade CLI installed on your system. If not, you can download it from the [Liferay Blade CLI GitHub page](https://github.com/liferay/liferay-blade-cli).
 
-   Once cloned, navigate into the project's folder.
+2. **Navigate to Your Project Directory**: Open a terminal and navigate to the root directory from the cloned repository.
 
-    ```
-    cd liferay-course-personalized-experiences
-    ```
+3. **Run the Initialization Command**: Execute the following command to initialize your local Liferay bundle:
+   ```
+   blade gw initBundle
+   ```
 
-1. Perform a git fetch, a day before the training starts, to ensure you have the latest version.
+   This command will prepare the Liferay bundle and make it available in the `bundles` directory of your project.
 
-    ```
-    git fetch origin
-    ```
+4. **Verify the Bundle**: Once the command completes, check the `bundles` directory to ensure that the Liferay bundle has been set up correctly.
 
-1. Checkout the main branch.
+By following these steps, you will have a local Liferay bundle ready for development and testing purposes. This setup is essential for running and deploying your Liferay modules effectively.
 
-    ```
-    git checkout main
-    ```
 
-1. To ensure you have the most recent content for main branch, run the following command.
+## Starting and Stopping the Bundle
 
-    ```
-    git pull origin main
-    ```
+Once you have prepared your Liferay bundle, you can start and stop it using the Blade CLI tool. Follow the steps below to manage your bundle:
 
-1. In the terminal, navigate to the root folder of the repository and run the following command.
+1. **Start the Bundle**: To start your Liferay bundle, execute the following command in your terminal:
+   ```
+   blade server start
+   ```
 
-    ```
-    cd liferay-course-personalized-experiences
-    ```
+   This command will start the Liferay server, making it accessible for development and testing.
 
-    ```
-    blade gw initBundle
-    ```
+2. **Access the Environment**: After starting the bundle, open a web browser and navigate to [http://localhost:8080](http://localhost:8080). Use the following credentials to log in:
+   - **Username**: admin@clarityvisionsolutions.com
+   - **Password**: learn
 
-   Or
+   This will give you access to the Liferay environment where you can deploy and test your modules.
 
-    ```
-    ./gradlew initBundle
-    ```
+3. **Manual Reindex is needed**! Go to Control Panel -> Search -> Index Actions and perform a full reindex.
 
-1. After a successful build, run the 'blade server run' command to start your server.
+4. **Stop the Bundle**: When you are done working with the Liferay bundle, you can stop the server by executing the following command:
+   ```
+   blade server stop
+   ```
 
-    ```
-    blade server run
-    ```
+   This command will stop the Liferay server, freeing up system resources.
 
-   In case you don't have blade installed, run the following command from the workspace's root folder.
+By following these steps, you can effectively manage the lifecycle of your Liferay bundle, ensuring a smooth development and testing process.
 
-    ```
-    ./bundles/tomcat/bin/catalina.sh run
-    ```
-
-Now, a clean Liferay environment should have started.
-
-1. When finished, access your Liferay DXP instance by going to `localhost:8080` in your browser.
-
-1. Sign in using these credentials.
-
-    * Username: `admin@clarityvisionsolutions.com`
-    * Password: `learn`
-
-Once logged in, access the Control Panel &rarr; Search &rarr; Index Actions &rarr; Execute Full Reindex.
-
-And voilà! You're ready to dive into the bootcamp!
-
-<!-- If you get curious and take a look at the repository, you'll notice it contains several branches named `exercise-xy`, being xy the exercise’s number. Those have been created to help you in case you get lost or need to go back to an earlier activity in the training. If that does happen, you can just follow the instructions previously described for the branch/exercise you need. -->
